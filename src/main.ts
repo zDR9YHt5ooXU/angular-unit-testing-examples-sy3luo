@@ -1,4 +1,5 @@
 import './polyfills';
+declare var jasmine;
 
 import { enableProdMode } from '@angular/core';
 import './test/jasmine-setup';
@@ -7,7 +8,7 @@ import 'jasmine-core/lib/jasmine-core/boot0.js';
 import 'jasmine-core/lib/jasmine-core/boot1.js';
 
 import './test.ts';
-import jasmine from 'jasmine';
+// import jasmine from 'jasmine';
 import { AppModule } from './app/app.module';
 import { TestBed, async } from '@angular/core/testing';
 import {
@@ -28,13 +29,13 @@ platformBrowserDynamicTesting()
   })
   .catch((err) => console.error(err));
 
-// (function bootstrap() {
-//   if ((window as any).jasmineRef) {
-//     location.reload();
+(function bootstrap() {
+  if ((window as any).jasmineRef) {
+    location.reload();
 
-//     return;
-//   }
+    return;
+  }
 
-//   window.onload(new Event('anything'));
-//   (window as any).jasmineRef = jasmine.getEnv();
-// })();
+  window.onload(new Event('anything'));
+  (window as any).jasmineRef = jasmine.getEnv();
+})();
