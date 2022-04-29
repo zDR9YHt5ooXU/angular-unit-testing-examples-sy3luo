@@ -7,8 +7,8 @@ describe('SystemDashboardComponent', () => {
   let component: SystemDashboardComponent;
   let fixture: ComponentFixture<SystemDashboardComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [SystemDashboardComponent],
     });
 
