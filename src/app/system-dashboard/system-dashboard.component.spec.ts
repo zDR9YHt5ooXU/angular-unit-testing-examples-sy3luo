@@ -28,6 +28,6 @@ describe('SystemDashboardComponent', () => {
     tick(300);
     expect(component.loading).toBeFalse();
     tick(300);
-    // fixture.destroy();
+    fixture.destroy();
   }));
 });
