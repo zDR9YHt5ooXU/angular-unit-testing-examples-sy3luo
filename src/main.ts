@@ -3,7 +3,8 @@ import './polyfills';
 import { enableProdMode } from '@angular/core';
 import './test/jasmine-setup';
 import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
-import 'jasmine-core/lib/jasmine-core/boot.js';
+import 'jasmine-core/lib/jasmine-core/boot0.js';
+import 'jasmine-core/lib/jasmine-core/boot1.js';
 
 import './test.ts';
 import jasmine from 'jasmine';
