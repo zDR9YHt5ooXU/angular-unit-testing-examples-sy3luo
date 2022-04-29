@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { bufferTime, filter, takeUntil } from 'rxjs/operators';
+import { bufferTime, filter, switchMap, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-system-dashboard',
@@ -13,7 +13,11 @@ export class SystemDashboardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const fortigate = new BehaviorSubject(null);
+    const fortigate = new BehaviorSubject(null).pipe(
+      switchMap(async (v) => {
+        return v;
+      })
+    );
     fortigate
       .pipe(bufferTime(100), takeUntil(this.destroyed))
       .subscribe((v) => {
