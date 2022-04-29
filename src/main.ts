@@ -27,13 +27,13 @@ platformBrowserDynamicTesting()
   })
   .catch((err) => console.error(err));
 
-(function bootstrap() {
-  if ((window as any).jasmineRef) {
-    location.reload();
+// (function bootstrap() {
+//   if ((window as any).jasmineRef) {
+//     location.reload();
 
-    return;
-  }
+//     return;
+//   }
 
-  window.onload(new Event('anything'));
-  (window as any).jasmineRef = jasmine.getEnv();
-})();
+//   window.onload(new Event('anything'));
+//   (window as any).jasmineRef = jasmine.getEnv();
+// })();
